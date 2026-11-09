@@ -1,0 +1,24 @@
+{
+  "name": "@treasurybox/panel",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p ${PANEL_PORT:-3000}",
+    "build": "next build",
+    "start": "next start -p ${PANEL_PORT:-3000}"
+  },
+  "dependencies": {
+    "@treasurybox/rails": "*",
+    "next": "^15.5.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.9.0"
+  }
+}

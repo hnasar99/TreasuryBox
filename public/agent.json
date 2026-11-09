@@ -1,0 +1,13 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Fluuix Treasury Box",
+  "description": "Treasury agent for a LatAm merchant on Celo: keep enough Ripio wFIAT for scheduled supplier payments and rotate only the surplus. Live sends require a wallet signature and the Loops ERC-8021 tag.",
+  "services": [
+    { "name": "web", "endpoint": "https://github.com/hnasar99/TreasuryBox" },
+    { "name": "repository", "endpoint": "https://github.com/hnasar99/TreasuryBox" }
+  ],
+  "x402Support": false,
+  "active": true,
+  "supportedTrust": ["reputation"],
+  "registrations": []
+}

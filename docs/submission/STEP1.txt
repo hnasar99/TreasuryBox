@@ -1,0 +1,32 @@
+Project name: Fluuix Treasury Box
+
+Description:
+Fluuix Treasury Box helps a Latin American merchant keep enough local-currency stablecoin for supplier payments and see what is left to rotate. On Celo mainnet the merchant's home balance is a Ripio wFIAT token, starting with wARS. The app lists that balance, reserves scheduled payments for a set number of days, and blocks a rotation that would spend the reserve. A daily review states the reserve and the amount that could move. Any live transfer or swap asks for a wallet signature. Rotation quotes use Textile on Celo; without an executable quote the app does not swap. Ripio on-ramp and off-ramp are links, not completed ramps. This entry is the Celo and Ripio wFIAT flow.
+
+Narrative:
+At the end of the day the merchant must pay suppliers in pesos. Holding the whole till in wARS is simple, and moving the surplus into another stablecoin is a treasury choice with price and fee risk. The product makes the cash floor visible and refuses a move that breaks it. It does not promise that the surplus will be worth more in the morning.
+
+Repository URL: https://github.com/hnasar99/TreasuryBox
+Companion app: https://github.com/hnasar99/treasurybox-mobile (flavor celo, branch feat/flavors)
+
+Demo URL (until a hosted panel exists): https://github.com/hnasar99/TreasuryBox
+Local panel used for screenshots: RAIL_PROVIDER=ripio npm run build:ripio && npm run start -w @treasurybox/panel
+
+Screenshot: docs/submission/panel-ripio-home.png
+Shows Celo chain 42220, Ripio wFIAT balances, honest P&L copy, no Twin/Belo.
+
+Agent wallet: NOT SET. No AGENT_PRIVATE_KEY in this environment.
+ERC-8004: not registered. public/agent.json has registrations: []
+Attribution tag: celo_202a37e338a2
+
+On-chain (manual; spends gas; do not run without a funded key):
+  export PATH="$HOME/.nvm/versions/node/v24.21.0/bin:$PATH"
+  export TREASURY_MODE=live
+  export CELO_ATTRIBUTION_CODE=celo_202a37e338a2
+  export AGENT_PRIVATE_KEY=  # never commit
+  export CONFIRM_REGISTER_8004=yes
+  npm run register:8004
+  Then send one small tagged wFIAT transfer from the same address and paste it as agent-wallet.
+
+Do not submit Twin, Belo, ARGt, BRAt, Arbitrum, USA₮, or x402 settlement as this entry.
+The user submits the Loops form. Do not pass --confirm on their behalf.

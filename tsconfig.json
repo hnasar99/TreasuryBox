@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@treasurybox/rails": ["./packages/rails/src/index.ts"],
+      "@treasurybox/rails/*": ["./packages/rails/src/*"]
+    }
+  },
+  "include": ["agent/**/*.ts", "lib/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "packages/rails/src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "apps"]
+}

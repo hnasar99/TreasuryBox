@@ -1,0 +1,49 @@
+{
+  "name": "treasurybox",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TreasuryBox — AI treasury agent for LatAm merchants (local stablecoins)",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "eve dev",
+    "dev:panel": "npm run dev -w @treasurybox/panel",
+    "build": "npm run build:full",
+    "build:rails": "npm run build -w @treasurybox/rails",
+    "build:ripio": "RAIL_PROVIDER=ripio npm run build -w @treasurybox/rails && RAIL_PROVIDER=ripio NEXT_PUBLIC_RAIL_PROVIDER=ripio npm run build -w @treasurybox/panel && npm run verify:shake -- ripio",
+    "build:twin": "RAIL_PROVIDER=twin npm run build -w @treasurybox/rails && npm run build -w @treasurybox/panel && npm run verify:shake -- twin",
+    "build:full": "RAIL_PROVIDER=full npm run build -w @treasurybox/rails && npm run build -w @treasurybox/panel",
+    "verify:shake": "node scripts/verify-tree-shake.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "register:8004": "tsx scripts/register-8004.ts",
+    "dry-run:quote": "tsx scripts/dry-run-quote.ts"
+  },
+  "dependencies": {
+    "@celo/attribution-tags": "^0.5.0",
+    "@treasurybox/rails": "*",
+    "@x402/core": "^2.29.0",
+    "@x402/evm": "^2.29.0",
+    "@x402/express": "^2.29.0",
+    "ai": "^7.0.137",
+    "eve": "1.0.0-rc.1",
+    "viem": "^2.57.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.27.7": true
+  }
+}

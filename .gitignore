@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.next/
+.turbo/
+.vercel/
+.eve/
+coverage/
+*.log
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.tsbuildinfo
+apps/panel/out/
+public/agent.registered.json
